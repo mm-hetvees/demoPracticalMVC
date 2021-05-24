@@ -1,0 +1,50 @@
+﻿@model demoPractical.Models.FilePath
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm())
+{
+    <div>
+        <div class="row">
+            <div class="col-md-2">
+                @Html.Label("Choose a file :")
+            </div>
+            <div class="col-md-10">
+                <div style="display:flex;">
+                    @Html.TextBoxFor(model=>model.PathFile,htmlAttributes:new { @class="form-contol",@readonly=true,@id="pathVal"})
+                    <div style="margin-left:15px;">
+                        <label for="fileUpload" class="d-inline-block text-dark bg-white btn btn-info">Browse
+                        </label>
+                        <input type="file" id="fileUpload" class="btn-primary float-left" onchange="previewFile(this);" name="FormFile" style="display:none;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <input type="submit" value="Submit" name="btnAction" class="btn btn-primary" />
+                <input type="submit" value="Reset" name="btnAction" class="btn btn-warning" />
+            </div>
+        </div>
+    </div>
+    if (ViewBag.result != null)
+    {
+        <div class="row">
+            <div class="col-md-12">
+                @ViewBag.result
+            </div>
+        </div>
+    }
+}
+@section scripts{
+    <script>
+            function previewFile(input) {
+                console.log("fired");
+                var file = $("input[type=file]").get(0).files[0];
+                $('#pathVal').val(file.name);
+            }
+    </script>
+}

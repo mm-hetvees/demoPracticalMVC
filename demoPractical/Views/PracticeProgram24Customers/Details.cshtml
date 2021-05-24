@@ -1,0 +1,59 @@
+﻿@model demoPractical.Customer
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Customer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Customeraddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customeraddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerContactNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerContactNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CustomerCountry)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerCountry)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

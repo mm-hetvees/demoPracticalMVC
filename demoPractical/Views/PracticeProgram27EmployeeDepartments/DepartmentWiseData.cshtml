@@ -1,0 +1,42 @@
+﻿@model demoPractical.EmployeeDepartment
+
+@{
+    ViewBag.Title = "DepartmentWiseData";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DepartmentWiseData</h2>
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        <div class="row">
+            <div class="col-4">
+                @Html.Label("Choose the department:")
+            </div>
+            <div class="col-8">
+                @Html.DropDownList("DepartmentName", null, htmlAttributes: new { @class = "form-control", @id = "departmentValue" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div id="DivDisplayDataDepartmentWise">
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@section scripts{
+    <script>
+        $("#departmentValue").on('change', function () {
+            var result = $(this).val();
+            jQuery.ajax({
+                type: 'GET',
+                url: '/PracticeProgram27EmployeeDepartments/GetDataDepartmentWise',
+                data: { departmentName: result },
+                success: function (data) {
+                    $("#DivDisplayDataDepartmentWise").html(data);
+                }
+            });
+        });
+    </script>
+}

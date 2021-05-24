@@ -1,0 +1,105 @@
+﻿@model demoPractical.Models.MarkSheet
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm())
+{
+    <div class="table-bordered" style="padding:10px;">
+        <div class="row" style="margin-top:15px;">
+            <div class="col-md-4" >
+                @Html.Label("Roll Number:")
+            </div>
+            <div class="col-md-4" >
+                @Html.TextBoxFor(model => model.RollNumber, htmlAttributes: new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="row" style="margin-top:15px;">
+            <div class="col-md-4" >
+                @Html.Label("Name:")
+            </div>
+            <div class="col-md-4" >
+                @Html.TextBoxFor(model => model.Name, htmlAttributes: new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="row" style="margin-top:15px;">
+            <div class="col-md-8 text-center">
+                @Html.Label("Enter Marks:", htmlAttributes: new { @style = "text-decoration:underline;" })
+            </div>
+        </div>
+        <div class="row" style="margin-top:15px;">
+            <div class="col-md-4" >
+                @Html.Label("Server Side Web Programming ")
+            </div>
+            <div class="col-md-4" >
+                @Html.TextBoxFor(model => model.WebProgrammingMarks, htmlAttributes: new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="row" style="margin-top:15px;">
+            <div class="col-md-4" >
+                @Html.Label("Computer Network:")
+            </div>
+            <div class="col-md-4" >
+                @Html.TextBoxFor(model => model.ComputerNetworkMarks, htmlAttributes: new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="row" style="margin-top:15px;">
+            <div class="col-md-4" >
+                @Html.Label("Buisness Information System:")
+            </div>
+            <div class="col-md-4" >
+                @Html.TextBoxFor(model => model.BuisnessInformationSystemMarks, htmlAttributes: new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="row" style="margin-top:15px;">
+            <div class="col-md-4" >
+                @Html.Label("System Software:")
+            </div>
+            <div class="col-md-4" >
+                @Html.TextBoxFor(model => model.SystemSoftwareMarks, htmlAttributes: new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="row" style="margin-top:15px;">
+            <div class="col-md-4" >
+                @Html.Label("Information Security:")
+            </div>
+            <div class="col-md-4" >
+                @Html.TextBoxFor(model => model.InformationSecurityMarks, htmlAttributes: new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="row" style="margin-top:15px;">
+            <div class="col-md-8 text-center">
+                <input type="submit" value="Calculate" name="btnAction" class="btn btn-primary" />
+                <input type="submit" value="Reset" name="btnAction" class="btn btn-warning" />
+            </div>
+        </div>
+        <div class="row" style="margin-top:15px;">
+            <div class="col-md-4" >
+                @Html.Label("Total:")
+            </div>
+            <div class="col-md-4" >
+                @Html.TextBox("txtTotal", (String)ViewBag.total, htmlAttributes: new { @class = "form-control", @readonly = true })
+            </div>
+        </div>
+        <div class="row" style="margin-top:15px;">
+            <div class="col-md-4" >
+                @Html.Label("Percentage:")
+            </div>
+            <div class="col-md-4" >
+                @Html.TextBox("txtPercentage", (String)ViewBag.percentage, htmlAttributes: new { @class = "form-control", @readonly = true })
+            </div>
+        </div>
+        <div class="row" style="margin-top:15px;">
+            <div class="col-md-4" >
+                @Html.Label("Grade:")
+            </div>
+            <div class="col-md-4" >
+                @Html.TextBox("txtGrade", (String)ViewBag.grade, htmlAttributes: new { @class = "form-control", @readonly = true })
+            </div>
+        </div>
+
+
+    </div>
+}

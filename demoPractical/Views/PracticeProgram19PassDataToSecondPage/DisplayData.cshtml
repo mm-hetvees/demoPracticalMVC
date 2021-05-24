@@ -1,0 +1,19 @@
+﻿@model demoPractical.Models.ModelTransfer
+@{
+    ViewBag.Title = "DisplayData";
+}
+
+<h2>DisplayData</h2>
+<div style="padding:15px;" class="table-bordered">
+    <div class="row" style="padding:10px;">
+        <div class="col-md-12 text-center" style="font-size:2em;font-weight:bold;">
+            @Html.DisplayFor(model => model.dropdownVal)
+        </div>
+    </div>
+    <div class="row" style="padding:10px;">
+        <div class="col-md-12 text-center" style="font-size:2em;font-weight:bold;">
+            @Html.DisplayFor(model => model.chkChoiceVal)
+        </div>
+    </div>
+</div>
+

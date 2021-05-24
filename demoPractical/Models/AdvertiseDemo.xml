@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--<Advertisements>
+  <Ad>
+    <ImageUrl>~/Content/Images/bluehills.jpg</ImageUrl>
+    <AlternetText>Hetvee Shah</AlternetText>
+    <Impression>50</Impression>
+    <Keyword>Hetvee</Keyword>
+  </Ad>
+  <Ad>
+    <ImageUrl>~/Content/Images/sunset.jpg</ImageUrl>
+    <AlternetText>Hetvee Shah</AlternetText>
+    <Impression>50</Impression>
+    <Keyword>Hetvee</Keyword>
+  </Ad>
+</Advertisements>-->
+<Clients>
+  <Client>
+    <ClientNumber>1</ClientNumber>
+    <ClientName>Hetvee</ClientName>
+    <Address>SP-1</Address>
+    <City>Ahmedabad</City>
+    <State>Gujarat</State>
+    <Pincode>380007</Pincode>
+  </Client>
+  <Client>
+    <ClientNumber>2</ClientNumber>
+    <ClientName>Zeel</ClientName>
+    <Address>Reeyansh</Address>
+    <City>AHmedabad</City>
+    <State>Gujarat</State>
+    <Pincode>380007</Pincode>
+  </Client>
+</Clients>

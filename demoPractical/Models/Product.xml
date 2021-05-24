@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Products>
+  <Product>
+    <ProductId>1</ProductId>
+    <ProductName>Pen</ProductName>
+    <ProductCost>30.00</ProductCost>
+  </Product>
+  <Product>
+    <ProductId>2</ProductId>
+    <ProductName>Pencil</ProductName>
+    <ProductCost>20.00</ProductCost>
+  </Product>
+  <Product>
+    <ProductId>3</ProductId>
+    <ProductName>Sharpner</ProductName>
+    <ProductCost>10.00</ProductCost>
+  </Product>
+</Products>

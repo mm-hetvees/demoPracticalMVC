@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm())
+{
+    <div class="row" style="display:flex;">
+        <div class="col-2">
+            @Html.Label("Select Image:", htmlAttributes: new { @class = "text-right" })
+            <div>
+                <input type="radio" name="radioChoice" value="blueHills" />BlueHills
+            </div>
+            <div>
+                <input type="radio" name="radioChoice" value="sunset" />Sunset
+            </div>
+            <div>
+                <input type="radio" name="radioChoice" value="waterLilis" />WaterLilis
+            </div>
+            <div>
+                <input type="radio" name="radioChoice" value="winter" />Winter
+            </div>
+        </div>
+        <div class="col-10">
+            <div style="height:200px;width:200px;">
+                @if (ViewBag.result != null)
+                {
+                    <img src="@Url.Content(@ViewBag.result)" style="height:100%;width:100%;object-fit:contain" />
+                }
+                else
+                {
+                    <img src="~/Content/Images/bluehills.jpg" style="height:100%;width:100%;object-fit:contain" />
+                }
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <input type="submit" class="btn btn-primary" value="Submit" />
+        </div>
+    </div>
+}
+

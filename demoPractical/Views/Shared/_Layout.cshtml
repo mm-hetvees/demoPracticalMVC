@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/datatable")
+    @Styles.Render("~/Content/jqueryui")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            @*<div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>*@
+            @*<div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">*@
+            @*<li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("About", "About", "Home")</li>
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>*@
+            @*<li>@Html.ActionLink("HelloWorld", "Index", "PracticeProgram1HelloWOrldAndDatetime")</li>
+                <li>@Html.ActionLink("Textbox Demo", "Index", "PracticeProgram2TextboxDataDsiplay")</li>
+                <li>@Html.ActionLink("Arithmetic Operation", "Index", "PracticeProgram3ArithmeticOperation")</li>
+                <li>@Html.ActionLink("Numeric Operation", "Index", "PracticeProgram4NumericOperation")</li>
+                <li>@Html.ActionLink("String Operation", "Index", "PracticeProgram5StringOperation")</li>
+                <li>@Html.ActionLink("Image Demo", "Index", "PracticeProgram6ImageDisplay")</li>
+                <li>@Html.ActionLink("Month Name Demo", "Index", "PracticeProgram7Monthdemo")</li>*@
+            @*<li>@Html.ActionLink("Registeration", "Index", "PracticeProgram8RegisterationForm")</li>*@
+            @*<li>@Html.ActionLink("Greeting Card", "Index", "PracticeProgram9GreetingCard")</li>*@
+            @*</ul>
+                </div>*@
+            <nav class="navbar navbar-expand-lg navbar-light bg-secondary w-100">
+                <a class="navbar-brand text-white" href="#">My First App</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            @*<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>*@
+                            @Html.ActionLink("Home", "Index", "Home", htmlAttributes: new { @class = "nav-link text-white" })
+                            <span class="sr-only">(current)</span>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Programs
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="@Url.Action("Index","PracticeProgram1HelloWOrldAndDatetime")">Program1 Hello World</a>
+                                <a class="dropdown-item" href="@Url.Action("Index","PracticeProgram2TextboxDataDsiplay")">Program2 TextBox Demo</a>
+                                <a class="dropdown-item" href="@Url.Action("Index","PracticeProgram3ArithmeticOperation")">Program3 Arithmetic Operation</a>
+                                <a class="dropdown-item" href="@Url.Action("Index","PracticeProgram4NumericOperation")">Program4 Numeric Operation</a>
+                                <a class="dropdown-item" href="@Url.Action("Index","PracticeProgram5StringOperation")">Program5 String Operation</a>
+                                <a class="dropdown-item" href="@Url.Action("Index","PracticeProgram6ImageDisplay")">Program6 Image Display</a>
+                                <a class="dropdown-item" href="@Url.Action("Index","PracticeProgram7Monthdemo")">Program7 Month Demo</a>
+                                <a class="dropdown-item" href="@Url.Action("Index","PracticeProgram8RegisterationForm")">Program8 Registeration Form</a>
+                                <a class="dropdown-item" href="@Url.Action("Index","PracticeProgram9GreetingCard")">Program9 Greeting Card</a>
+                                <a class="dropdown-item" href="@Url.Action("Index","PractceProgram10Marksheet")">Program10 Marksheet</a>
+                                <a class="dropdown-item" href="@Url.Action("Index","PracticeProgram11RequiredFieldValidation")">Program11 Required Validation</a>
+                                <a class="dropdown-item" href="@Url.Action("Index","PracticeProgram12RangeValidator")">Program12 Range Validation</a>
+                                <a class="dropdown-item" href="@Url.Action("Index","PracticeProgram13CompareValidator")">Program13 Compare Validation</a>
+                                <a class="dropdown-item" href="@Url.Action("Index","PracticeProgram14RegexValidator")">Program14 Regular Expression Validation</a>
+                                <a class="dropdown-item" href="@Url.Action("Index","PractceProgram15StringLengthValidation")">Program15 Length Validation</a>
+                                <a class="dropdown-item" href="@Url.Action("Index","PracticeProgram16RegisterationWithValidation")">Program16 Registeration Form Validation</a>
+                                <a class="dropdown-item" href="@Url.Action("Index","PracticeProgram17FileUpload")">Program17 File Upload Control</a>
+                                <a class="dropdown-item" href="@Url.Action("Index","PracticeProgram18DateTimePicker")">Program18 DateTimePicker Control</a>
+                                <a class="dropdown-item" href="@Url.Action("Index","PracticeProgram19PassDataToSecondPage")">Program19 Send Information To Next Page</a>
+                                <a class="dropdown-item" href="@Url.Action("Index","PracticeProgram20AdRotator")">Program20 XML Data</a>
+                                <a class="dropdown-item" href="@Url.Action("Index","MasterPage")">Program21 Master Page</a>
+                                <a class="dropdown-item" href="@Url.Action("Index","PracticeProgram22Login")">Program22 Login Form</a>
+                                <a class="dropdown-item" href="@Url.Action("Create","PracticeProgram23SignUp")">Program23 SignUp Form</a>
+                                <a class="dropdown-item" href="@Url.Action("Create","PracticeProgram24Customers")">Program24 Customer Entry Form</a>
+                                <a class="dropdown-item" href="@Url.Action("Index","PracticeProgram25EmploeeTables")">Program25 Employee Information Form</a>
+                                <a class="dropdown-item" href="@Url.Action("Index","PracticeProgram26Clients")">Program26 Client Master</a>
+                                <a class="dropdown-item" href="@Url.Action("DepartmentWiseData","PracticeProgram27EmployeeDepartments")">Program27 Department Wise Report</a>
+                                <a class="dropdown-item" href="@Url.Action("EmployeeDataOnSelect","PracticeProgram27EmployeeDepartments")">Program28 On Select Get Data</a>
+                                <a class="dropdown-item" href="@Url.Action("FilterData","PracticeProgram29Mobile_Details")">Program29 Range Wise Data</a>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/datatable")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jqueryui")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

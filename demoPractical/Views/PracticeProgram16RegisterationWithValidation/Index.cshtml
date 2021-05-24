@@ -1,0 +1,122 @@
+﻿@model demoPractical.Models.RegisterationWithValidation
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm())
+{
+<div class="table-bordered" style="width:500px;padding:10px;">
+    <div class="row" style="margin-top:15px;">
+        <div class="col-md-4">
+            @Html.Label("First Name:")
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.FirstName, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.FirstName, null, htmlAttributes: new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row" style="margin-top:15px;">
+        <div class="col-md-4">
+            @Html.Label("Last Name:")
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.LastName, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.LastName, null, htmlAttributes: new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row" style="margin-top:15px;">
+        <div class="col-md-4">
+            @Html.Label("Age:")
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.age, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.age, null, htmlAttributes: new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row" style="margin-top:15px;">
+        <div class="col-md-4">
+            @Html.Label("Password:")
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.Password, htmlAttributes: new { @class = "form-control", @type = "password" })
+            @Html.ValidationMessageFor(model => model.Password, null, htmlAttributes: new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row" style="margin-top:15px;">
+        <div class="col-md-4">
+            @Html.Label("Confirm Password:")
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.ConfirmPassword, htmlAttributes: new { @class = "form-control", @type = "password" })
+            @Html.ValidationMessageFor(model => model.ConfirmPassword, null, htmlAttributes: new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row" style="margin-top:15px;">
+        <div class="col-md-4">
+            @Html.Label("Email:")
+        </div>
+        <div class="col-md-8">
+            @Html.TextBoxFor(model => model.Email, htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.Email, null, htmlAttributes: new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="row" style="margin-top:15px;">
+        <div class="col-md-12 text-center">
+            <input type="submit" value="Submit" class="btn btn-primary" />
+        </div>
+    </div>
+    @if (@ViewBag.result != null)
+    {
+        <div class="row" style="margin-top:15px;">
+            <div class="col-md-4">
+                @Html.Label("First Name:")
+            </div>
+            <div class="col-md-8">
+                @ViewBag.result.FirstName
+            </div>
+        </div>
+        <div class="row" style="margin-top:15px;">
+            <div class="col-md-4">
+                @Html.Label("Last Name:")
+            </div>
+            <div class="col-md-8">
+                @ViewBag.result.LastName
+            </div>
+        </div>
+        <div class="row" style="margin-top:15px;">
+            <div class="col-md-4">
+                @Html.Label("Age:")
+            </div>
+            <div class="col-md-8">
+                @ViewBag.result.age
+            </div>
+        </div>
+        <div class="row" style="margin-top:15px;">
+            <div class="col-md-4">
+                @Html.Label("Password:")
+            </div>
+            <div class="col-md-8">
+                @ViewBag.result.Password
+            </div>
+        </div>
+        <div class="row" style="margin-top:15px;">
+            <div class="col-md-4">
+                @Html.Label("Confirm Password:")
+            </div>
+            <div class="col-md-8">
+                @ViewBag.result.ConfirmPassword
+            </div>
+        </div>
+        <div class="row" style="margin-top:15px;">
+            <div class="col-md-4">
+                @Html.Label("Email:")
+            </div>
+            <div class="col-md-8">
+                @ViewBag.result.Email
+            </div>
+        </div>
+    }
+</div>
+}

@@ -1,0 +1,46 @@
+﻿@model demoPractical.Models.DateTimePicker
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm())
+{
+    <div>
+        <div class="row">
+            <div class="col-md-2">
+                @Html.Label("Choose a date :")
+            </div>
+            <div class="col-md-10">
+                <div style="display:flex;">
+                    @Html.TextBoxFor(model => model.EventDate, htmlAttributes: new { @class = "form-contol", @readonly = true, @id = "txtdate",@type="text" })
+                </div>
+             </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <input type="submit" value="Submit" name="btnAction" class="btn btn-primary" />
+                <input type="submit" value="Reset" name="btnAction" class="btn btn-warning" />
+            </div>
+        </div>
+    </div>
+    if (ViewBag.result != null)
+    {
+        <div class="row">
+            <div class="col-md-12">
+                @ViewBag.result
+            </div>
+        </div>
+    }
+}
+@section scripts{
+    <script>
+        $("#txtdate").datepicker({
+            showOn: "button",
+            buttonText: "Open DateTime Picker",
+            dateFormat: "dd/mm/yy"
+        });
+    </script>
+}
+

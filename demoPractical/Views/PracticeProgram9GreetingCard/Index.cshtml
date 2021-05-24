@@ -1,0 +1,88 @@
+﻿@model demoPractical.Models.GreetingCard
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm())
+{
+<div>
+    <div class="row">
+        <div class="col-md-3">
+            @Html.Label("Choose a background color:")
+        </div>
+        <div class="col-md-4">
+            @Html.DropDownList("ddlColour", null, htmlAttributes: new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="row" style="margin-top:15px;">
+        <div class="col-md-3">
+            @Html.Label("Choose a font:")
+        </div>
+        <div class="col-md-4">
+            @Html.DropDownList("ddlFontStyle", null, htmlAttributes: new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="row" style="margin-top:15px;">
+        <div class="col-md-3">
+            @Html.Label("Choose a Font Size:")
+        </div>
+        <div class="col-md-4">
+            @Html.TextBoxFor(model => model.fontSize, htmlAttributes: new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="row" style="margin-top:15px;">
+        <div class="col-md-3">
+            @Html.Label("Choose a border style:")
+        </div>
+        <div class="col-md-4">
+            @Html.RadioButtonFor(model => model.borderStyle, "none")None
+            @Html.RadioButtonFor(model => model.borderStyle, "double")Double
+            @Html.RadioButtonFor(model => model.borderStyle, "solid")Solid
+        </div>
+    </div>
+    <div class="row" style="margin-top:15px;">
+        <div class="col-md-3">
+            @Html.Label("Choose a default picture:")
+        </div>
+        <div class="col-md-4">
+            @Html.CheckBox("chkPictureChoice")Add The Default Picture
+        </div>
+    </div>
+    <div class="row" style="margin-top:15px;">
+        <div class="col-md-3">
+            @Html.Label("Enter The Greeting Text:")
+        </div>
+        <div class="col-md-4">
+            @Html.TextAreaFor(model => model.message, htmlAttributes: new { @class = "form-control",@rows="4" })
+        </div>
+    </div>
+    <div claas="row" style="margin-top:15px;">
+        <div class="col-md-3">
+            <input type="submit" value="Update" class="btn btn-primary" />
+        </div>
+    </div>
+</div>
+    if (ViewBag.result != null)
+    {
+        <div class="row" style="margin-top:60px;">
+            <div class="col-md-12">
+                <div style="background-color:@ViewBag.result.colour;width:600px;border-style:@ViewBag.result.borderStyle;padding:20px;">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <label style="font-size:@ViewBag.result.fontSize;font-family:@ViewBag.result.fontStyle">@ViewBag.result.message</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            @if(@ViewBag.result.pictureChoice!="false"){
+                                <img src="@Url.Content(@ViewBag.pictureURL)" />
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}

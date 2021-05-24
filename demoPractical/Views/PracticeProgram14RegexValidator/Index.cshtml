@@ -1,0 +1,40 @@
+﻿@model demoPractical.Models.RegexValidator
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+@using (Html.BeginForm())
+{
+    <div class="table-bordered" style="width:500px;padding:10px;">
+        <div class="row" style="margin-top:15px;">
+            <div class="col-md-4">
+                @Html.Label("Email:")
+            </div>
+            <div class="col-md-8">
+                @Html.TextBoxFor(model => model.Email, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Email, null, htmlAttributes: new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="row" style="margin-top:15px;">
+            <div class="col-md-12 text-center">
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+        </div>
+        @if (@ViewBag.Email != null)
+        {
+            <div class="row" style="margin-top:15px;">
+                <div class="col-md-4">
+                    @Html.Label("Email:")
+                </div>
+                <div class="col-md-8">
+                    @ViewBag.Email
+                </div>
+            </div>
+        }
+    </div>
+}
+

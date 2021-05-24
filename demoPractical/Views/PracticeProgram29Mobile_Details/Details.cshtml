@@ -1,0 +1,43 @@
+﻿@model demoPractical.Mobile_Details
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Mobile_Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ModelName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModelName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModelPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModelPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModelImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModelImage)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

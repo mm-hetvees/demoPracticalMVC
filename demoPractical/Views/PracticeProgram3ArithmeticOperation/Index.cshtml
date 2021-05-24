@@ -1,0 +1,46 @@
+﻿@model demoPractical.Models.ArithemeticOperation
+
+@{
+    ViewBag.Title = "Index";
+}
+<h2>Index</h2>
+@using (Html.BeginForm()) { 
+<div>
+    <div class="row">
+        <div class="col-2">
+            @Html.Label("Number-1:", htmlAttributes: new { @class = "text-right" })
+        </div>
+        <div class="col-4">
+            @Html.TextBoxFor(model => model.no1, htmlAttributes: new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="row mt-1">
+        <div class="col-2">
+            @Html.Label("Number-2:", htmlAttributes: new { @class = "text-right" })
+        </div>
+        <div class="col-4">
+            @Html.TextBoxFor(model => model.no2, htmlAttributes: new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="row d-flex mt-2">
+        <div class="col-1">
+            <input class="btn btn-primary ml-1" type="submit" name="operation" value="+" />
+        </div>
+        <div class="col-1">
+            <input class="btn btn-primary ml-1" type="submit" name="operation" value="-"/>
+        </div>
+        <div class="col-1">
+            <input class="btn btn-primary ml-1" type="submit" name="operation" value="*"/>
+        </div>
+        <div class="col-1">
+            <input class="btn btn-primary ml-1" type="submit" name="operation" value="/"/>
+        </div>
+    </div>
+    <div class="row mt-1">
+        <div class="col">
+            @Html.Label("Your Answer Is: ")
+            @Html.DisplayFor(model => model.ans)
+        </div> 
+    </div>
+</div>
+}

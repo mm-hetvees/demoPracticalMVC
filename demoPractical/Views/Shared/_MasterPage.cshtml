@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <header style="background-color:lightyellow;text-align:center;">Welcome!!</header>
+    <nav style="text-align:right;">
+        <div>
+            @Html.ActionLink("Home", "Index", "MasterPage")
+            @Html.ActionLink("About", "AboutMasterPage", "MasterPage")
+            @Html.ActionLink("Contact", "ContactMasterPage", "MasterPage")
+        </div>
+
+    </nav>
+    <div style="background-color:lightgray;">
+        @RenderBody()
+    </div>
+    <footer>
+        <div>All Right Reserved!</div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Html.BeginForm())
+{
+<div style="padding:10px;width:200px;" class="table-bordered">
+    <div class="row" style="padding:10px;">
+        <div class="col-md-12">
+                @Html.DropDownList("ddlThings", null, htmlAttributes: new { @class = "form-control" })
+        </div>
+    </div>
+    <div class="row" style="padding:10px;">
+        <div class="col-md-12 text-center">
+            @Html.CheckBox("chkShowDetails",true)Show Full Details
+        </div>
+    </div>
+    <div class="row" style="padding:10px;">
+        <div class="col-md-12">
+            <input type="submit" value="View Information" name="btnAction" class="btn btn-primary" />
+        </div>
+    </div>
+</div>
+}
+
