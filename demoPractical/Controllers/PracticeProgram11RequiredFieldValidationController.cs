@@ -15,12 +15,19 @@ namespace demoPractical.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Index(RequiredFieldValidation model)
+        public ActionResult Index(RequiredFieldValidation model, string btnAction)
         {
-            if (ModelState.IsValid)
+            if (btnAction == "Submit")
             {
-                ViewBag.FirstName = model.FirstName;
-                ViewBag.LastName = model.LastName;
+                if (ModelState.IsValid)
+                {
+                    ViewBag.FirstName = model.FirstName;
+                    ViewBag.LastName = model.LastName;
+                }
+            }
+            if (btnAction == "Reset")
+            {
+                ModelState.Clear();
             }
             return View();
         }

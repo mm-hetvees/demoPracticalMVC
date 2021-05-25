@@ -10,35 +10,41 @@
         <div class="col-2">
             @Html.Label("Select Image:", htmlAttributes: new { @class = "text-right" })
             <div>
-                <input type="radio" name="radioChoice" value="blueHills" />BlueHills
+                <input type="radio" name="radioChoice" value="blueHills" class="RadioSelectionOfImage" />BlueHills
             </div>
             <div>
-                <input type="radio" name="radioChoice" value="sunset" />Sunset
+                <input type="radio" name="radioChoice" value="sunset" class="RadioSelectionOfImage" />Sunset
             </div>
             <div>
-                <input type="radio" name="radioChoice" value="waterLilis" />WaterLilis
+                <input type="radio" name="radioChoice" value="waterLilis" class="RadioSelectionOfImage" />WaterLilis
             </div>
             <div>
-                <input type="radio" name="radioChoice" value="winter" />Winter
+                <input type="radio" name="radioChoice" value="winter" class="RadioSelectionOfImage" />Winter
             </div>
         </div>
         <div class="col-10">
             <div style="height:200px;width:200px;">
-                @if (ViewBag.result != null)
-                {
-                    <img src="@Url.Content(@ViewBag.result)" style="height:100%;width:100%;object-fit:contain" />
-                }
-                else
-                {
-                    <img src="~/Content/Images/bluehills.jpg" style="height:100%;width:100%;object-fit:contain" />
-                }
+                    <img src="~/Content/Images/bluehills.jpg" id="imgDisplay" style="height:100%;width:100%;object-fit:contain" />
             </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <input type="submit" class="btn btn-primary" value="Submit" />
         </div>
     </div>
 }
 
+@section scripts{
+    <script>
+        $(".RadioSelectionOfImage").change(function () {
+            if ($(this).val() == "blueHills") {
+                $("#imgDisplay").attr("src", "/Content/Images/bluehills.jpg")
+            }
+            if ($(this).val() == "sunset") {
+                $("#imgDisplay").attr("src", "/Content/Images/sunset.jpg")
+            }
+            if ($(this).val() == "waterLilis") {
+                $("#imgDisplay").attr("src", "/Content/Images/waterlilis.jpg")
+            }
+            if ($(this).val() == "winter") {
+                $("#imgDisplay").attr("src", "/Content/Images/winter.jpg")
+            }
+        })
+    </script>
+}

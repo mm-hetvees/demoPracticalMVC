@@ -15,11 +15,19 @@ namespace demoPractical.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Index(RegexValidator model)
+        public ActionResult Index(RegexValidator model, string btnAction)
         {
-            if (ModelState.IsValid)
+            if (btnAction == "Submit")
             {
-                ViewBag.Email = model.Email;
+                if (ModelState.IsValid)
+                {
+                    ViewBag.Email = model.Email;
+                }
+            }
+            if (btnAction == "Reset")
+            {
+                ModelState.Clear();
+
             }
             return View();
         }

@@ -15,12 +15,20 @@ namespace demoPractical.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Index(LengthValidator model)
+        public ActionResult Index(LengthValidator model, string btnAction)
         {
-            if (ModelState.IsValid)
+            if (btnAction == "Submit")
             {
-                ViewBag.comment = model.comment;
+                if (ModelState.IsValid)
+                {
+                    ViewBag.comment = model.comment;
+                }
             }
+            if (btnAction == "Reset")
+            {
+                ModelState.Clear();
+            }
+
             return View();
         }
     }

@@ -15,12 +15,19 @@ namespace demoPractical.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Index(CompareValidator model)
+        public ActionResult Index(CompareValidator model, string btnAction)
         {
-            if (ModelState.IsValid)
+            if (btnAction == "Submit")
             {
-                ViewBag.Password = model.Password;
-                ViewBag.ConfirmPassword = model.ConfirmPassword;
+                if (ModelState.IsValid)
+                {
+                    ViewBag.Password = model.Password;
+                    ViewBag.ConfirmPassword = model.ConfirmPassword;
+                }
+            }
+            if (btnAction == "Reset")
+            {
+                ModelState.Clear();
             }
             return View();
         }

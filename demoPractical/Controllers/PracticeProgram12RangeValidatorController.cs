@@ -15,11 +15,18 @@ namespace demoPractical.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Index(AgeValidator model)
+        public ActionResult Index(AgeValidator model, string btnAction)
         {
-            if (ModelState.IsValid)
+            if (btnAction == "Submit")
             {
-                ViewBag.Age = model.age;
+                if (ModelState.IsValid)
+                {
+                    ViewBag.Age = model.age;
+                }
+            }
+            if (btnAction == "Reset")
+            {
+                ModelState.Clear();
             }
             return View();
         }
