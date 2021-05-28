@@ -12,14 +12,11 @@ namespace demoPractical
     using System;
     using System.Collections.Generic;
     
-    public partial class EmployeeDepartment
+    public partial class MobileDetail
     {
-        public string Id { get; set; }
-        public string Name { get; set; }
-        public string Job { get; set; }
-        public Nullable<System.DateTime> HireDate { get; set; }
-        public Nullable<long> Salary { get; set; }
-        public Nullable<long> Commision { get; set; }
-        public string DepartmentName { get; set; }
+        public int Id { get; set; }
+        public string ModelName { get; set; }
+        public Nullable<long> ModelPrice { get; set; }
+        public string ModelImage { get; set; }
     }
 }

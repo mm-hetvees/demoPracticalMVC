@@ -137,6 +137,12 @@
     <Compile Include="Client.cs">
       <DependentUpon>PracticeDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="ClientTableData.cs">
+      <DependentUpon>PracticeDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClientTaEmployeeDepartmentTableDetailsbleData.cs">
+      <DependentUpon>PracticeDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MasterPageController.cs" />
     <Compile Include="Controllers\PractceProgram10MarksheetController.cs" />
@@ -167,7 +173,14 @@
     <Compile Include="Controllers\PracticeProgram7MonthdemoController.cs" />
     <Compile Include="Controllers\PracticeProgram8RegisterationFormController.cs" />
     <Compile Include="Controllers\PracticeProgram9GreetingCardController.cs" />
+    <Compile Include="Controllers\StudentRegisterationsController.cs" />
     <Compile Include="Customer.cs">
+      <DependentUpon>PracticeDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerEntryTable.cs">
+      <DependentUpon>PracticeDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="C__EFMigrationsHistory.cs">
       <DependentUpon>PracticeDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="C__MigrationHistory.cs">
@@ -185,8 +198,14 @@
     <Compile Include="EmployeeDepartment.cs">
       <DependentUpon>PracticeDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="EmployeeTableDetail.cs">
+      <DependentUpon>PracticeDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="MobileDetail.cs">
+      <DependentUpon>PracticeDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Mobile_Details.cs">
       <DependentUpon>PracticeDataModel.tt</DependentUpon>
@@ -229,7 +248,13 @@
       <DependentUpon>PracticeDataModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentRegisteration.cs">
+      <DependentUpon>PracticeDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="User.cs">
+      <DependentUpon>PracticeDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserTableDetail.cs">
       <DependentUpon>PracticeDataModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -505,6 +530,11 @@
     <Content Include="Views\PracticeProgram29Mobile_Details\Index.cshtml" />
     <Content Include="Views\PracticeProgram29Mobile_Details\FilterData.cshtml" />
     <Content Include="Views\PracticeProgram29Mobile_Details\_FilterDataDisplay.cshtml" />
+    <Content Include="Views\StudentRegisterations\Create.cshtml" />
+    <Content Include="Views\StudentRegisterations\Delete.cshtml" />
+    <Content Include="Views\StudentRegisterations\Details.cshtml" />
+    <Content Include="Views\StudentRegisterations\Edit.cshtml" />
+    <Content Include="Views\StudentRegisterations\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

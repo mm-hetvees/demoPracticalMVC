@@ -12,14 +12,14 @@ namespace demoPractical
     using System;
     using System.Collections.Generic;
     
-    public partial class EmployeeDepartment
+    public partial class UserTableDetail
     {
-        public string Id { get; set; }
-        public string Name { get; set; }
-        public string Job { get; set; }
-        public Nullable<System.DateTime> HireDate { get; set; }
-        public Nullable<long> Salary { get; set; }
-        public Nullable<long> Commision { get; set; }
-        public string DepartmentName { get; set; }
+        public int Id { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string UserPassword { get; set; }
+        public Nullable<System.DateTime> BirthDate { get; set; }
+        public Nullable<bool> Gender { get; set; }
+        public string UserEmail { get; set; }
     }
 }

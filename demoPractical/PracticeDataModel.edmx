@@ -5,6 +5,13 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="trainingModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="__EFMigrationsHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+          </Key>
+          <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+        </EntityType>
         <EntityType Name="__MigrationHistory">
           <Key>
             <PropertyRef Name="MigrationId" />
@@ -26,6 +33,29 @@
           <Property Name="State" Type="varchar" MaxLength="50" />
           <Property Name="Pincode" Type="varchar" MaxLength="6" />
         </EntityType>
+        <EntityType Name="ClientTableData">
+          <Key>
+            <PropertyRef Name="ClientNumber" />
+          </Key>
+          <Property Name="ClientNumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ClientName" Type="nvarchar(max)" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="City" Type="nvarchar(max)" />
+          <Property Name="State" Type="nvarchar(max)" />
+          <Property Name="Pincode" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="ClientTaEmployeeDepartmentTableDetailsbleData">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="nvarchar" MaxLength="450" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Job" Type="nvarchar(max)" />
+          <Property Name="HireDate" Type="datetime2" Precision="7" />
+          <Property Name="Salary" Type="bigint" />
+          <Property Name="Commision" Type="bigint" />
+          <Property Name="DepartmentName" Type="nvarchar(max)" />
+        </EntityType>
         <EntityType Name="Customer">
           <Key>
             <PropertyRef Name="Id" />
@@ -36,6 +66,17 @@
           <Property Name="CustomerContactNo" Type="varchar" MaxLength="10" />
           <Property Name="CustomerCity" Type="varchar" MaxLength="50" />
           <Property Name="CustomerCountry" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CustomerEntryTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerName" Type="nvarchar(max)" />
+          <Property Name="Customeraddress" Type="nvarchar(max)" />
+          <Property Name="CustomerContactNo" Type="nvarchar(max)" />
+          <Property Name="CustomerCity" Type="nvarchar(max)" />
+          <Property Name="CustomerCountry" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Departments">
           <Key>
@@ -77,6 +118,18 @@
           <Property Name="Department_Id" Type="int" />
           <Property Name="HireDate" Type="datetime" Nullable="false" />
         </EntityType>
+        <EntityType Name="EmployeeTableDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="DateOfBirth" Type="datetime2" Precision="7" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="ContactNumber" Type="nvarchar(max)" />
+          <Property Name="City" Type="nvarchar(max)" />
+          <Property Name="Country" Type="nvarchar(max)" />
+        </EntityType>
         <EntityType Name="Mobile_Details">
           <Key>
             <PropertyRef Name="Id" />
@@ -85,6 +138,54 @@
           <Property Name="ModelName" Type="varchar" MaxLength="50" />
           <Property Name="ModelPrice" Type="bigint" />
           <Property Name="ModelImage" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="MobileDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ModelName" Type="nvarchar(max)" />
+          <Property Name="ModelPrice" Type="bigint" />
+          <Property Name="ModelImage" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="StudentRegisteration">
+          <Key>
+            <PropertyRef Name="AdmissionNo" />
+          </Key>
+          <Property Name="AdmissionNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AdmissionDate" Type="datetime" />
+          <Property Name="ApplicationFormNo" Type="int" Nullable="false" />
+          <Property Name="CourseName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Semester" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Division" Type="varchar" MaxLength="1" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="MiddleName" Type="varchar" MaxLength="30" />
+          <Property Name="LastName" Type="varchar" MaxLength="30" />
+          <Property Name="DateOfBirth" Type="datetime" />
+          <Property Name="Gender" Type="bit" />
+          <Property Name="FatherName" Type="varchar" MaxLength="30" />
+          <Property Name="Occupation" Type="varchar" MaxLength="50" />
+          <Property Name="MotherName" Type="varchar" MaxLength="30" />
+          <Property Name="AnnualIncome" Type="bigint" />
+          <Property Name="Nationality" Type="varchar(max)" />
+          <Property Name="Region" Type="varchar(max)" />
+          <Property Name="BloodGroup" Type="varchar" MaxLength="50" />
+          <Property Name="Category" Type="varchar" MaxLength="50" />
+          <Property Name="Cast" Type="varchar" MaxLength="50" />
+          <Property Name="Quota" Type="varchar(max)" />
+          <Property Name="FeesConcession" Type="bit" />
+          <Property Name="FeeStructure" Type="varchar(max)" />
+          <Property Name="MobileNumber" Type="varchar" MaxLength="10" />
+          <Property Name="ParentMobileNumber" Type="varchar" MaxLength="10" />
+          <Property Name="Address" Type="varchar(max)" />
+          <Property Name="Percentage10th" Type="varchar" MaxLength="50" />
+          <Property Name="Percentage12th" Type="varchar" MaxLength="50" />
+          <Property Name="TrasportationCost" Type="bigint" />
+          <Property Name="HostelName" Type="varchar(max)" />
+          <Property Name="Marksheet10th" Type="varchar(max)" />
+          <Property Name="Marksheet12th" Type="varchar(max)" />
+          <Property Name="SchoolLeaving" Type="varchar(max)" />
+          <Property Name="ProfilePicture" Type="varchar(max)" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'training.dbo.Users' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -100,6 +201,18 @@ warning 6002: The table/view 'training.dbo.Users' does not have a primary key de
           <Property Name="Gender" Type="bit" />
           <Property Name="UserEmail" Type="varchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="UserTableDetails">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar(max)" />
+          <Property Name="LastName" Type="nvarchar(max)" />
+          <Property Name="UserPassword" Type="nvarchar(max)" />
+          <Property Name="BirthDate" Type="datetime2" Precision="7" />
+          <Property Name="Gender" Type="bit" />
+          <Property Name="UserEmail" Type="nvarchar(max)" />
+        </EntityType>
         <Association Name="FK_dbo_Employees_dbo_Departments_Department_Id">
           <End Role="Departments" Type="Self.Departments" Multiplicity="0..1" />
           <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
@@ -113,16 +226,24 @@ warning 6002: The table/view 'training.dbo.Users' does not have a primary key de
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="trainingModelStoreContainer">
+          <EntitySet Name="__EFMigrationsHistory" EntityType="Self.__EFMigrationsHistory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClientTableData" EntityType="Self.ClientTableData" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClientTaEmployeeDepartmentTableDetailsbleData" EntityType="Self.ClientTaEmployeeDepartmentTableDetailsbleData" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CustomerEntryTable" EntityType="Self.CustomerEntryTable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Departments" EntityType="Self.Departments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EmploeeTable" EntityType="Self.EmploeeTable" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="EmployeeDepartment" EntityType="Self.EmployeeDepartment" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EmployeeTableDetails" EntityType="Self.EmployeeTableDetails" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Mobile_Details" EntityType="Self.Mobile_Details" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Users" EntityType="Self.Users" store:Type="Tables" Schema="dbo">
-            <!--<DefiningQuery>SELECT 
+          <EntitySet Name="MobileDetails" EntityType="Self.MobileDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StudentRegisteration" EntityType="Self.StudentRegisteration" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserTableDetails" EntityType="Self.UserTableDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
     [Users].[Id] AS [Id], 
     [Users].[FirstName] AS [FirstName], 
     [Users].[LastName] AS [LastName], 
@@ -130,7 +251,7 @@ warning 6002: The table/view 'training.dbo.Users' does not have a primary key de
     [Users].[BirthDate] AS [BirthDate], 
     [Users].[Gender] AS [Gender], 
     [Users].[UserEmail] AS [UserEmail]
-    FROM [dbo].[Users] AS [Users]</DefiningQuery>-->
+    FROM [dbo].[Users] AS [Users]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK_dbo_Employees_dbo_Departments_Department_Id" Association="Self.FK_dbo_Employees_dbo_Departments_Department_Id">
             <End Role="Departments" EntitySet="Departments" />
@@ -253,6 +374,14 @@ warning 6002: The table/view 'training.dbo.Users' does not have a primary key de
             <End Role="Employees" EntitySet="Employees" />
           </AssociationSet>
           <EntitySet Name="Mobile_Details" EntityType="trainingModel.Mobile_Details" />
+          <EntitySet Name="C__EFMigrationsHistory" EntityType="trainingModel.C__EFMigrationsHistory" />
+          <EntitySet Name="ClientTableDatas" EntityType="trainingModel.ClientTableData" />
+          <EntitySet Name="ClientTaEmployeeDepartmentTableDetailsbleDatas" EntityType="trainingModel.ClientTaEmployeeDepartmentTableDetailsbleData" />
+          <EntitySet Name="CustomerEntryTables" EntityType="trainingModel.CustomerEntryTable" />
+          <EntitySet Name="EmployeeTableDetails" EntityType="trainingModel.EmployeeTableDetail" />
+          <EntitySet Name="MobileDetails" EntityType="trainingModel.MobileDetail" />
+          <EntitySet Name="StudentRegisterations" EntityType="trainingModel.StudentRegisteration" />
+          <EntitySet Name="UserTableDetails" EntityType="trainingModel.UserTableDetail" />
         </EntityContainer>
         <EntityType Name="Mobile_Details">
           <Key>
@@ -262,6 +391,119 @@ warning 6002: The table/view 'training.dbo.Users' does not have a primary key de
           <Property Name="ModelName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="ModelPrice" Type="Int64" />
           <Property Name="ModelImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="C__EFMigrationsHistory">
+          <Key>
+            <PropertyRef Name="MigrationId" />
+          </Key>
+          <Property Name="MigrationId" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ProductVersion" Type="String" Nullable="false" MaxLength="32" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ClientTableData">
+          <Key>
+            <PropertyRef Name="ClientNumber" />
+          </Key>
+          <Property Name="ClientNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClientName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Pincode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ClientTaEmployeeDepartmentTableDetailsbleData">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="String" Nullable="false" MaxLength="450" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Job" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="HireDate" Type="DateTime" Precision="7" />
+          <Property Name="Salary" Type="Int64" />
+          <Property Name="Commision" Type="Int64" />
+          <Property Name="DepartmentName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CustomerEntryTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Customeraddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerContactNo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerCity" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerCountry" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="EmployeeTableDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="7" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ContactNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MobileDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ModelName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ModelPrice" Type="Int64" />
+          <Property Name="ModelImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="StudentRegisteration">
+          <Key>
+            <PropertyRef Name="AdmissionNo" />
+          </Key>
+          <Property Name="AdmissionNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AdmissionDate" Type="DateTime" Precision="3" />
+          <Property Name="ApplicationFormNo" Type="Int32" Nullable="false" />
+          <Property Name="CourseName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Semester" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Division" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+          <Property Name="Gender" Type="Boolean" />
+          <Property Name="FatherName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Occupation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MotherName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="AnnualIncome" Type="Int64" />
+          <Property Name="Nationality" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Region" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="BloodGroup" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Cast" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Quota" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="FeesConcession" Type="Boolean" />
+          <Property Name="FeeStructure" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MobileNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ParentMobileNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Percentage10th" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Percentage12th" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TrasportationCost" Type="Int64" />
+          <Property Name="HostelName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Marksheet10th" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Marksheet12th" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="SchoolLeaving" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ProfilePicture" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="UserTableDetail">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="UserPassword" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BirthDate" Type="DateTime" Precision="7" />
+          <Property Name="Gender" Type="Boolean" />
+          <Property Name="UserEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -366,6 +608,127 @@ warning 6002: The table/view 'training.dbo.Users' does not have a primary key de
                 <ScalarProperty Name="ModelImage" ColumnName="ModelImage" />
                 <ScalarProperty Name="ModelPrice" ColumnName="ModelPrice" />
                 <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="C__EFMigrationsHistory">
+            <EntityTypeMapping TypeName="trainingModel.C__EFMigrationsHistory">
+              <MappingFragment StoreEntitySet="__EFMigrationsHistory">
+                <ScalarProperty Name="ProductVersion" ColumnName="ProductVersion" />
+                <ScalarProperty Name="MigrationId" ColumnName="MigrationId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClientTableDatas">
+            <EntityTypeMapping TypeName="trainingModel.ClientTableData">
+              <MappingFragment StoreEntitySet="ClientTableData">
+                <ScalarProperty Name="Pincode" ColumnName="Pincode" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="ClientName" ColumnName="ClientName" />
+                <ScalarProperty Name="ClientNumber" ColumnName="ClientNumber" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClientTaEmployeeDepartmentTableDetailsbleDatas">
+            <EntityTypeMapping TypeName="trainingModel.ClientTaEmployeeDepartmentTableDetailsbleData">
+              <MappingFragment StoreEntitySet="ClientTaEmployeeDepartmentTableDetailsbleData">
+                <ScalarProperty Name="DepartmentName" ColumnName="DepartmentName" />
+                <ScalarProperty Name="Commision" ColumnName="Commision" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="HireDate" ColumnName="HireDate" />
+                <ScalarProperty Name="Job" ColumnName="Job" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerEntryTables">
+            <EntityTypeMapping TypeName="trainingModel.CustomerEntryTable">
+              <MappingFragment StoreEntitySet="CustomerEntryTable">
+                <ScalarProperty Name="CustomerCountry" ColumnName="CustomerCountry" />
+                <ScalarProperty Name="CustomerCity" ColumnName="CustomerCity" />
+                <ScalarProperty Name="CustomerContactNo" ColumnName="CustomerContactNo" />
+                <ScalarProperty Name="Customeraddress" ColumnName="Customeraddress" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeeTableDetails">
+            <EntityTypeMapping TypeName="trainingModel.EmployeeTableDetail">
+              <MappingFragment StoreEntitySet="EmployeeTableDetails">
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="ContactNumber" ColumnName="ContactNumber" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MobileDetails">
+            <EntityTypeMapping TypeName="trainingModel.MobileDetail">
+              <MappingFragment StoreEntitySet="MobileDetails">
+                <ScalarProperty Name="ModelImage" ColumnName="ModelImage" />
+                <ScalarProperty Name="ModelPrice" ColumnName="ModelPrice" />
+                <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StudentRegisterations">
+            <EntityTypeMapping TypeName="trainingModel.StudentRegisteration">
+              <MappingFragment StoreEntitySet="StudentRegisteration">
+                <ScalarProperty Name="ProfilePicture" ColumnName="ProfilePicture" />
+                <ScalarProperty Name="SchoolLeaving" ColumnName="SchoolLeaving" />
+                <ScalarProperty Name="Marksheet12th" ColumnName="Marksheet12th" />
+                <ScalarProperty Name="Marksheet10th" ColumnName="Marksheet10th" />
+                <ScalarProperty Name="HostelName" ColumnName="HostelName" />
+                <ScalarProperty Name="TrasportationCost" ColumnName="TrasportationCost" />
+                <ScalarProperty Name="Percentage12th" ColumnName="Percentage12th" />
+                <ScalarProperty Name="Percentage10th" ColumnName="Percentage10th" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="ParentMobileNumber" ColumnName="ParentMobileNumber" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="FeeStructure" ColumnName="FeeStructure" />
+                <ScalarProperty Name="FeesConcession" ColumnName="FeesConcession" />
+                <ScalarProperty Name="Quota" ColumnName="Quota" />
+                <ScalarProperty Name="Cast" ColumnName="Cast" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="BloodGroup" ColumnName="BloodGroup" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+                <ScalarProperty Name="AnnualIncome" ColumnName="AnnualIncome" />
+                <ScalarProperty Name="MotherName" ColumnName="MotherName" />
+                <ScalarProperty Name="Occupation" ColumnName="Occupation" />
+                <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Division" ColumnName="Division" />
+                <ScalarProperty Name="Semester" ColumnName="Semester" />
+                <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+                <ScalarProperty Name="ApplicationFormNo" ColumnName="ApplicationFormNo" />
+                <ScalarProperty Name="AdmissionDate" ColumnName="AdmissionDate" />
+                <ScalarProperty Name="AdmissionNo" ColumnName="AdmissionNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserTableDetails">
+            <EntityTypeMapping TypeName="trainingModel.UserTableDetail">
+              <MappingFragment StoreEntitySet="UserTableDetails">
+                <ScalarProperty Name="UserEmail" ColumnName="UserEmail" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

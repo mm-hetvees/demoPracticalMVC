@@ -1,0 +1,293 @@
+﻿@model demoPractical.StudentRegisteration
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Student Registeration</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AdmissionDate)
+        </dt>
+
+        <dd>
+            @if(!String.IsNullOrEmpty(Convert.ToString(Model.AdmissionDate)))
+            {
+                @Convert.ToDateTime(Model.AdmissionDate).ToString("dd-MM-yyyy");
+            }
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicationFormNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicationFormNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CourseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CourseName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Semester)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Semester)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Division)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Division)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MiddleName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MiddleName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </dt>
+
+        <dd>
+            @if (!String.IsNullOrEmpty(Convert.ToString(Model.DateOfBirth)))
+            {
+                @Convert.ToDateTime(Model.DateOfBirth).ToString("dd-MM-yyyy")
+            }
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd>
+           @(Convert.ToString(Model.Gender)=="False"?"Female":"Male")
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FatherName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FatherName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Occupation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Occupation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MotherName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MotherName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AnnualIncome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AnnualIncome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nationality)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nationality)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Region)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Region)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BloodGroup)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BloodGroup)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cast)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cast)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Quota)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quota)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FeesConcession)
+        </dt>
+
+        <dd>
+            @(Convert.ToString(Model.FeesConcession)=="True"?"Yes":"No")
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FeeStructure)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FeeStructure)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MobileNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MobileNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ParentMobileNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ParentMobileNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Percentage10th)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Percentage10th)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Percentage12th)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Percentage12th)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TrasportationCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TrasportationCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HostelName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HostelName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Marksheet10th)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Marksheet10th)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Marksheet12th)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Marksheet12th)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SchoolLeaving)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SchoolLeaving)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProfilePicture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProfilePicture)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            @Html.ActionLink("Back to List", "Index",null,htmlAttributes:new {@class="btn btn-secondary" })
+        </div>
+    }
+</div>

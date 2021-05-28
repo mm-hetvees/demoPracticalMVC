@@ -12,14 +12,9 @@ namespace demoPractical
     using System;
     using System.Collections.Generic;
     
-    public partial class EmployeeDepartment
+    public partial class C__EFMigrationsHistory
     {
-        public string Id { get; set; }
-        public string Name { get; set; }
-        public string Job { get; set; }
-        public Nullable<System.DateTime> HireDate { get; set; }
-        public Nullable<long> Salary { get; set; }
-        public Nullable<long> Commision { get; set; }
-        public string DepartmentName { get; set; }
+        public string MigrationId { get; set; }
+        public string ProductVersion { get; set; }
     }
 }

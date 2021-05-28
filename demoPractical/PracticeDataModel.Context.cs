@@ -34,5 +34,13 @@ namespace demoPractical
         public virtual DbSet<Employee> Employees { get; set; }
         public virtual DbSet<User> Users { get; set; }
         public virtual DbSet<Mobile_Details> Mobile_Details { get; set; }
+        public virtual DbSet<C__EFMigrationsHistory> C__EFMigrationsHistory { get; set; }
+        public virtual DbSet<ClientTableData> ClientTableDatas { get; set; }
+        public virtual DbSet<ClientTaEmployeeDepartmentTableDetailsbleData> ClientTaEmployeeDepartmentTableDetailsbleDatas { get; set; }
+        public virtual DbSet<CustomerEntryTable> CustomerEntryTables { get; set; }
+        public virtual DbSet<EmployeeTableDetail> EmployeeTableDetails { get; set; }
+        public virtual DbSet<MobileDetail> MobileDetails { get; set; }
+        public virtual DbSet<StudentRegisteration> StudentRegisterations { get; set; }
+        public virtual DbSet<UserTableDetail> UserTableDetails { get; set; }
     }
 }
